@@ -1,0 +1,23 @@
+{
+  "name": "git-avatars",
+  "version": "1.0.0",
+  "description": "An easy way to link to a GitLab or GitHub avatar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filiptronicek/git-avatars.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/filiptronicek/git-avatars/issues"
+  },
+  "homepage": "https://github.com/filiptronicek/git-avatars#readme",
+  "dependencies": {
+    "contrast": "^1.0.1"
+  }
+}
