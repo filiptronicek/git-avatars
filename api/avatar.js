@@ -14,7 +14,7 @@ function hexToDec(hex) {
 }
 
 const avrg = (x, y) => {
-    return (hexToDec(x) + hexToDec(y)) / 2;
+  return (hexToDec(x) + hexToDec(y)) / 2;
 };
 
 module.exports = (req, res) => {
@@ -30,8 +30,7 @@ module.exports = (req, res) => {
     .digest("hex");
   const colors = [hash.substr(0, 6), hash.substr(6, 6)];
 
-
- console.log(contrast(avrg(colors[0], colors[1]).toString(16)));
+  console.log(contrast(avrg(colors[0], colors[1]).toString(16)));
 
   res.send(svg(colors[0], colors[1], name));
 };
