@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nothing here</h1>
+    The API sits at /api/ 
+    <br>
+    Check out the <a href="http://github.com/filiptronicek/git-avatars">Documentation</a>
+</body>
+<script>
+    var f = ['🕐','🕑','🕒','🕓','🕔','🕕','🕖','🕗','🕘','🕙','🕚','🕛'];
+
+function loop() {
+    location.hash = f[Math.floor((Date.now()/100)%f.length)];
+
+    setTimeout(loop, 250);
+}
+
+loop();
+</script>
+</html>
