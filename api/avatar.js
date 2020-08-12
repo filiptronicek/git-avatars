@@ -2,9 +2,7 @@ const svg = require("./svg");
 const crypto = require("crypto");
 const contrast = require("contrast");
 
-const hexToDec = (hex) => {
-  return parseInt(hex, 16);
-};
+const mix = require("./colors");
 
 const avrg = (x, y) => {
   return (hexToDec(x) + hexToDec(y)) / 2;
@@ -24,7 +22,7 @@ module.exports = (req, res) => {
   const colors = [hash.substr(0, 6), hash.substr(6, 6)];
 
   console.table(colors);
-  console.log(avrg(colors[0], colors[1]).toString(16));
+  console.log(mix(colors[0], colors[1]));
 
   res.send(svg(colors[0], colors[1], name));
 };
