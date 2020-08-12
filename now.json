@@ -5,7 +5,7 @@
       }
     },
     "routes": [
-      { "src": "/gh/(?<id>[^/]*)", "dest": "/api/?r=$id&p=github" },
+      { "src": "/gh/(?<id>[^/]*)", "dest": "/api/?u=$id&p=github" },
       { "src": "/gl/(?<id>[^/]*)", "dest": "/api/?u=$id&p=gitlab" }
     ]
   }
