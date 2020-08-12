@@ -3,14 +3,7 @@ const crypto = require("crypto");
 const contrast = require("contrast");
 
 const hexToDec = (hex) => {
-  let result = 0,
-    digitValue;
-  hex = hex.toLowerCase();
-  for (var i = 0; i < hex.length; i++) {
-    digitValue = "0123456789abcdefgh".indexOf(hex[i]);
-    result = result * 16 + digitValue;
-  }
-  return result;
+    return parseInt(hex, 16);
 };
 
 const avrg = (x, y) => {
@@ -30,9 +23,9 @@ module.exports = (req, res) => {
     .digest("hex");
   const colors = [hash.substr(0, 6), hash.substr(6, 6)];
 
-  console.log(avrg(colors[0], colors[1]).toString(16));
+  console.table(colors);
   console.log(
-      contrast(
+      (
           avrg(colors[0], colors[1]).toString(16)
           )
       );
