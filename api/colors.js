@@ -1,5 +1,8 @@
 function hex2dec(hex) {
-    return hex.replace('#', '').match(/.{2}/g).map(n => parseInt(n, 16));
+  return hex
+    .replace("#", "")
+    .match(/.{2}/g)
+    .map((n) => parseInt(n, 16));
 }
 
 function rgb2hex(r, g, b) {
@@ -16,7 +19,7 @@ function rgb2cmyk(r, g, b) {
   let c = 1 - r / 255;
   let m = 1 - g / 255;
   let y = 1 - b / 255;
-  let k = Math.min(c, m, y);
+  const k = Math.min(c, m, y);
   c = (c - k) / (1 - k);
   m = (m - k) / (1 - k);
   y = (y - k) / (1 - k);
@@ -34,23 +37,23 @@ function cmyk2rgb(c, m, y, k) {
 }
 
 function mix_cmyks(...cmyks) {
-  let c =
+  const c =
     cmyks.map((cmyk) => cmyk[0]).reduce((a, b) => a + b, 0) / cmyks.length;
-  let m =
+  const m =
     cmyks.map((cmyk) => cmyk[1]).reduce((a, b) => a + b, 0) / cmyks.length;
-  let y =
+  const y =
     cmyks.map((cmyk) => cmyk[2]).reduce((a, b) => a + b, 0) / cmyks.length;
-  let k =
+  const k =
     cmyks.map((cmyk) => cmyk[3]).reduce((a, b) => a + b, 0) / cmyks.length;
   return [c, m, y, k];
 }
 
 function mix_hexes(...hexes) {
-  let rgbs = hexes.map((hex) => hex2dec(hex));
-  let cmyks = rgbs.map((rgb) => rgb2cmyk(...rgb));
-  let mixture_cmyk = mix_cmyks(...cmyks);
-  let mixture_rgb = cmyk2rgb(...mixture_cmyk);
-  let mixture_hex = rgb2hex(...mixture_rgb);
+  const rgbs = hexes.map((hex) => hex2dec(hex));
+  const cmyks = rgbs.map((rgb) => rgb2cmyk(...rgb));
+  const mixture_cmyk = mix_cmyks(...cmyks);
+  const mixture_rgb = cmyk2rgb(...mixture_cmyk);
+  const mixture_hex = rgb2hex(...mixture_rgb);
   return mixture_hex;
 }
 module.exports = mix_hexes;
