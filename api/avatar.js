@@ -1,8 +1,8 @@
 const svg = require("./svg");
+const mix = require("./colors");
+
 const crypto = require("crypto");
 const contrast = require("contrast");
-
-const mix = require("./colors");
 
 module.exports = (req, res) => {
   let name = req.query.uname;
