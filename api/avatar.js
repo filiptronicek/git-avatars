@@ -2,7 +2,7 @@ const svg = require("./svg");
 const crypto = require("crypto");
 const contrast = require("contrast");
 
-function hexToDec(hex) {
+const hexToDec = (hex) => {
   var result = 0,
     digitValue;
   hex = hex.toLowerCase();
@@ -11,7 +11,7 @@ function hexToDec(hex) {
     result = result * 16 + digitValue;
   }
   return result;
-}
+};
 
 const avrg = (x, y) => {
   return (hexToDec(x) + hexToDec(y)) / 2;
