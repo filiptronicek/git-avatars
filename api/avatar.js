@@ -5,7 +5,7 @@ module.exports = (req, res) => {
 
     let name = req.query.uname;
 
-    if(name) name = name.split(' ')[0][0]+name.split(' ')[1][0];
+    if(name) name = (name.split(' ')[0][0]+name.split(' ')[1][0]).toUpperCase();
     else name = "HI";
 
     const hash = crypto.createHash('md5').update(req.query.usr || 'test').digest('hex');
