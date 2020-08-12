@@ -2,9 +2,10 @@
   "name": "git-avatars",
   "version": "1.0.0",
   "description": "An easy way to link to a GitLab or GitHub avatar",
-  "main": "index.js",
+  "main": "/api/avatar.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./api/avatar.js"
   },
   "repository": {
     "type": "git",
