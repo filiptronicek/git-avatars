@@ -31,11 +31,7 @@ module.exports = (req, res) => {
   const colors = [hash.substr(0, 6), hash.substr(6, 6)];
 
   console.log(avrg(colors[0], colors[1]).toString(16));
-  console.log(
-      contrast(
-          avrg(colors[0], colors[1]).toString(16)
-          )
-      );
+  console.log(contrast(avrg(colors[0], colors[1]).toString(16)));
 
   res.send(svg(colors[0], colors[1], name));
 };
