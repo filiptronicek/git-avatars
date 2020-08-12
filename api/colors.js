@@ -56,6 +56,7 @@ function mix_hexes(...hexes) {
   const mixture_cmyk = mix_cmyks(...cmyks);
   const mixture_rgb = cmyk2rgb(...mixture_cmyk);
   const mixture_hex = rgb2hex(...mixture_rgb);
+  
   return mixture_hex;
 }
 module.exports = mix_hexes;
