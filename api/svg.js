@@ -1,4 +1,4 @@
-function gen(start, stop, name, color) {
+const gen = (start, stop, name, color) => {
     return (
     `<svg width="120" height="500" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -13,5 +13,5 @@ function gen(start, stop, name, color) {
     </svg>
     `
     );
-}
+};
 module.exports = gen;
