@@ -1,3 +1,5 @@
+/* Copyright (c) 2019 Andy, 2020 GirkovArpa https://github.com/GirkovArpa/hex-color-mixer/blob/master/LICENSE */
+
 function hex2dec(hex) {
   return hex
     .replace("#", "")
