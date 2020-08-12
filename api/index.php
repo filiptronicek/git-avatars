@@ -11,7 +11,7 @@ function getAvatarURL($username, $provider)
 }
 $url = getAvatarURL($_GET['u'], $_GET['p']);
 if (strpos($url, 's=80') == true) {
-    $url = str_replace('s=80', 's=512', $url);
+    $url = str_replace('s=80', 's=460', $url);
 }
 
 $data = file_get_contents($url);
