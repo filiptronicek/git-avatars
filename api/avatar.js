@@ -1,10 +1,10 @@
-const crypto = require("crypto");
-const contrast = require("contrast");
+import { createHash } from "crypto";
+import contrast from "contrast";
 
-const svg = require("./svg");
-const mix = require("./colors");
+import svg from "./svg";
+import mix from "./colors";
 
-module.exports = (req, res) => {
+export default (req, res) => {
   let name = req.query.uname;
 
   if (name) {
@@ -12,8 +12,7 @@ module.exports = (req, res) => {
   }
   else name = "HI";
 
-  const hash = crypto
-    .createHash("md5")
+  const hash = createHash("md5")
     .update(req.query.usr || "test")
     .digest("hex");
 
