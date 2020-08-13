@@ -1,12 +1,21 @@
 {
-    "functions": {
-      "api/index.php": {
-        "runtime": "now-php@0.0.10"
-      }
+  "functions": {
+    "api/index.php": {
+      "runtime": "now-php@0.0.10"
+    }
+  },
+  "routes": [
+    {
+      "src": "/gh/(?<id>[^/]*)",
+      "dest": "/api/?u=$id&p=github"
     },
-    "routes": [
-      { "src": "/gh/(?<id>[^/]*)", "dest": "/api/?u=$id&p=github" },
-      { "src": "/gl/(?<id>[^/]*)", "dest": "/api/?u=$id&p=gitlab" },
-      { "src": "/gv/(?<id>[^/]*)", "dest": "/api/?u=$id&p=gravatar" }  
-    ]
-  }
+    {
+      "src": "/gl/(?<id>[^/]*)",
+      "dest": "/api/?u=$id&p=gitlab"
+    },
+    {
+      "src": "/gv/(?<id>[^/]*)",
+      "dest": "/api/?u=$id&p=gravatar"
+    }
+  ]
+}
