@@ -14,7 +14,8 @@ An easy way to link to a GitLab or GitHub avatar, or create an entirely new one!
 
 ## Generating your own
 
-You need: | Description | Param name |
+You need: 
+| Description | Param name |
 | ------------|------------| 
 | the user name | `usr` | 
 | the name of the user (or just the initials) | `uname`
