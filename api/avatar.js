@@ -20,7 +20,7 @@ module.exports = (req, res) => {
   const average = mix(colors[0], colors[1]);
 
   let pColor = "#ffffff";
-  if(contrast(average) === "light") pcolor = "#000000";
+  if (contrast(average) === "light") pcolor = "#000000";
 
   res.send(svg(colors[0], colors[1], name, pColor));
 };
