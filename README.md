@@ -1,5 +1,5 @@
 # Git avatars
-An easy way to link to a GitLab or GitHub avatar
+An easy way to link to a GitLab or GitHub avatar, or create an entirely new one!
 
 ## GitHub / GitLab
 
