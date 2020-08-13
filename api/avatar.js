@@ -9,8 +9,7 @@ export default (req, res) => {
 
   if (name) {
     name = (name.split(" ")[0][0] + name.split(" ")[1][0]).toUpperCase();
-  }
-  else name = "HI";
+  } else name = "HI";
 
   const hash = createHash("md5")
     .update(req.query.usr || "test")
