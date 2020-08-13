@@ -2,7 +2,10 @@
  * https://github.com/GirkovArpa/hex-color-mixer/blob/master/LICENSE */
 
 const hex2dec = (hex) =>
-    hex.replace("#", "").match(/.{2}/g).map((n) => parseInt(n, 16));
+  hex
+    .replace("#", "")
+    .match(/.{2}/g)
+    .map((n) => parseInt(n, 16));
 
 const rgb2hex = (r, g, b) => {
   let rL = Math.round(r);
@@ -11,8 +14,9 @@ const rgb2hex = (r, g, b) => {
   rL = Math.min(r, 255);
   gL = Math.min(g, 255);
   bL = Math.min(b, 255);
-  return (
-      `#${[rL, gL, bL].map((c) => c.toString(16).padStart(2, "0")).join("")}`);
+  return `#${[rL, gL, bL]
+    .map((c) => c.toString(16).padStart(2, "0"))
+    .join("")}`;
 };
 
 const rgb2cmyk = (r, g, b) => {
@@ -23,7 +27,7 @@ const rgb2cmyk = (r, g, b) => {
   c = (c - k) / (1 - k);
   m = (m - k) / (1 - k);
   y = (y - k) / (1 - k);
-  return [ c, m, y, k ];
+  return [c, m, y, k];
 };
 
 const cmyk2rgb = (c, m, y, k) => {
@@ -33,20 +37,20 @@ const cmyk2rgb = (c, m, y, k) => {
   r = (1 - r) * 255 + 0.5;
   g = (1 - g) * 255 + 0.5;
   b = (1 - b) * 255 + 0.5;
-  return [ r, g, b ];
+  return [r, g, b];
 };
 
 const mixCmyks = (...cmyks) => {
   const c =
-      cmyks.map((cmyk) => cmyk[0]).reduce((a, b) => a + b, 0) / cmyks.length;
+    cmyks.map((cmyk) => cmyk[0]).reduce((a, b) => a + b, 0) / cmyks.length;
   const m =
-      cmyks.map((cmyk) => cmyk[1]).reduce((a, b) => a + b, 0) / cmyks.length;
+    cmyks.map((cmyk) => cmyk[1]).reduce((a, b) => a + b, 0) / cmyks.length;
   const y =
-      cmyks.map((cmyk) => cmyk[2]).reduce((a, b) => a + b, 0) / cmyks.length;
+    cmyks.map((cmyk) => cmyk[2]).reduce((a, b) => a + b, 0) / cmyks.length;
   const k =
-      cmyks.map((cmyk) => cmyk[3]).reduce((a, b) => a + b, 0) / cmyks.length;
+    cmyks.map((cmyk) => cmyk[3]).reduce((a, b) => a + b, 0) / cmyks.length;
 
-  return [ c, m, y, k ];
+  return [c, m, y, k];
 };
 
 const mixHexes = (...hexes) => {
