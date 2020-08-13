@@ -7,6 +7,8 @@ function getAvatarURL($username, $provider)
     } else if ($provider == "gitlab") {
         $responce = json_decode(file_get_contents("https://gitlab.com/api/v4/users?username=" . $username));
         return $responce[0]->avatar_url;
+    } else {
+        return "https://pfp.now.sh/err.png";
     }
 }
 $url = getAvatarURL($_GET['u'], $_GET['p']);
