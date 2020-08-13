@@ -53,9 +53,9 @@ const mixCmyks = (...cmyks) => {
 const mix_hexes = (...hexes) => {
   const rgbs = hexes.map((hex) => hex2dec(hex));
   const cmyks = rgbs.map((rgb) => rgb2cmyk(...rgb));
-  const mixture_cmyk = mixCmyks(...cmyks);
-  const mixture_rgb = cmyk2rgb(...mixture_cmyk);
-  const mixture_hex = rgb2hex(...mixture_rgb);
+  const mixtureCmyk = mixCmyks(...cmyks);
+  const mixtureRgb = cmyk2rgb(...mixtureCmyk);
+  const mixture_hex = rgb2hex(...mixtureRgb);
 
   return mixture_hex;
 };
