@@ -7,8 +7,9 @@ const mix = require("./colors");
 module.exports = (req, res) => {
   let name = req.query.uname;
 
-  if (name)
+  if (name) {
     name = (name.split(" ")[0][0] + name.split(" ")[1][0]).toUpperCase();
+  }
   else name = "HI";
 
   const hash = crypto
