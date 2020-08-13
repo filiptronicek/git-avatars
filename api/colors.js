@@ -14,9 +14,9 @@ const rgb2hex = (r, g, b) => {
   rL = Math.min(r, 255);
   gL = Math.min(g, 255);
   bL = Math.min(b, 255);
-  return (
-    `#${[rL, gL, bL].map((c) => c.toString(16).padStart(2, "0")).join("")}`
-  );
+  return `#${[rL, gL, bL]
+    .map((c) => c.toString(16).padStart(2, "0"))
+    .join("")}`;
 };
 
 const rgb2cmyk = (r, g, b) => {
