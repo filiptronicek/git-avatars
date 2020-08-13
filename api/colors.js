@@ -54,7 +54,7 @@ const mixCmyks = (...cmyks) => {
   return [c, m, y, k];
 };
 
-const mix_hexes = (...hexes) => {
+const mixHexes = (...hexes) => {
   const rgbs = hexes.map((hex) => hex2dec(hex));
   const cmyks = rgbs.map((rgb) => rgb2cmyk(...rgb));
   const mixtureCmyk = mixCmyks(...cmyks);
@@ -64,4 +64,4 @@ const mix_hexes = (...hexes) => {
   return mixtureHex;
 };
 
-module.exports = mix_hexes;
+module.exports = mixHexes;
