@@ -11,7 +11,7 @@ function getAvatarURL($username, $provider)
             return $responce[0]->avatar_url;
             break;
         case "gravatar":
-            return "https://gravatar.com/avatar/{$username}";
+            return "https://gravatar.com/avatar/{$username}?s=80";
             break;
         default:
             return "https://pfp.now.sh/err.png";
