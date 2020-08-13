@@ -10,6 +10,9 @@ function getAvatarURL($username, $provider)
             $responce = json_decode(file_get_contents("https://gitlab.com/api/v4/users?username=" . $username));
             return $responce[0]->avatar_url;
             break;
+        case "gravatar":
+            return "https://gravatar.com/avatar/{$username}";
+            break;
         default:
             return "https://pfp.now.sh/err.png";
 
