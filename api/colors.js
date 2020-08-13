@@ -15,7 +15,7 @@ const rgb2hex = (r, g, b) => {
   gL = Math.min(g, 255);
   bL = Math.min(b, 255);
   return (
-    "#" + [rL, gL, bL].map((c) => c.toString(16).padStart(2, "0")).join("")
+    `#${[rL, gL, bL].map((c) => c.toString(16).padStart(2, "0")).join("")}`
   );
 };
 
