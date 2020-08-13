@@ -1,8 +1,8 @@
 import { createHash } from "crypto";
-import contrast from "contrast";
+// import contrast from "contrast";
 
 import svg from "./svg";
-import mix from "./colors";
+// import mix from "./colors";
 
 export default (req, res) => {
   let name = req.query.uname;
@@ -17,7 +17,7 @@ export default (req, res) => {
     .digest("hex");
 
   const colors = [hash.substr(0, 6), hash.substr(6, 6)];
-  const average = mix(colors[0], colors[1]);
+  // const average = mix(colors[0], colors[1]);
 
   const pColor = "#ffffff";
   // if (contrast(average) === "light") pcolor = "#000000";
