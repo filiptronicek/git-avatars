@@ -59,9 +59,9 @@ const mix_hexes = (...hexes) => {
   const cmyks = rgbs.map((rgb) => rgb2cmyk(...rgb));
   const mixtureCmyk = mixCmyks(...cmyks);
   const mixtureRgb = cmyk2rgb(...mixtureCmyk);
-  const mixture_hex = rgb2hex(...mixtureRgb);
+  const mixtureHex = rgb2hex(...mixtureRgb);
 
-  return mixture_hex;
+  return mixtureHex;
 };
 
 module.exports = mix_hexes;
