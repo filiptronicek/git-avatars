@@ -20,6 +20,6 @@ export default (req, res) => {
 
   const pColor = "#ffffff";
   // if (contrast(average) === "light") pcolor = "#000000";
-
+  res.setHeader('Content-Type', 'image/svg+xml');
   res.send(svg(colors[0], colors[1], name, pColor));
 };
