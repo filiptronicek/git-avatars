@@ -16,6 +16,10 @@
     {
       "src": "/gv/(?<id>[^/]*)",
       "dest": "/api/?u=$id&p=gravatar"
+    },
+    {
+      "src": "/avatar",
+      "dest": "/api/avatar"
     }
   ]
 }
