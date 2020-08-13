@@ -1,4 +1,5 @@
-/* Copyright (c) 2019 Andy, 2020 GirkovArpa https://github.com/GirkovArpa/hex-color-mixer/blob/master/LICENSE */
+/* Copyright (c) 2019 Andy, 2020 GirkovArpa
+ * https://github.com/GirkovArpa/hex-color-mixer/blob/master/LICENSE */
 
 const hex2dec = (hex) => {
   return hex
@@ -14,7 +15,9 @@ const rgb2hex = (r, g, b) => {
   rL = Math.min(r, 255);
   gL = Math.min(g, 255);
   bL = Math.min(b, 255);
-  return "#" + [rL, gL, bL].map((c) => c.toString(16).padStart(2, "0")).join("");
+  return (
+    "#" + [rL, gL, bL].map((c) => c.toString(16).padStart(2, "0")).join("")
+  );
 };
 
 const rgb2cmyk = (r, g, b) => {
@@ -56,7 +59,7 @@ const mix_hexes = (...hexes) => {
   const mixture_cmyk = mixCmyks(...cmyks);
   const mixture_rgb = cmyk2rgb(...mixture_cmyk);
   const mixture_hex = rgb2hex(...mixture_rgb);
-  
+
   return mixture_hex;
 };
 
