@@ -1,5 +1,5 @@
-const gen = (start, stop, name, color) => {
-    return (
+const gen = (start, stop, name, color) => 
+    (
     `<svg width="120" height="500" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
@@ -13,5 +13,5 @@ const gen = (start, stop, name, color) => {
     </svg>
     `
     );
-};
-module.exports = gen;
+
+    module.exports = gen;
