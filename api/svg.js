@@ -6,7 +6,7 @@ const gen = (start, stop, name, color) =>
                 <stop offset="100%" stop-color="#${stop}"/>
             </linearGradient>
         </defs>
-        
+
         <rect x="10" y="120" rx="15" ry="15" width="100" height="100" fill="url(#Gradient2)"/>
         <text x="50%" y="35%" alignment-baseline="central" dominant-baseline="central" text-anchor="middle" fill="${color}" font-family="sans-serif" font-size="35px">${name}</text>
     </svg>
