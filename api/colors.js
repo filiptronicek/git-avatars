@@ -1,20 +1,22 @@
-/* Copyright (c) 2019 Andy, 2020 GirkovArpa https://github.com/GirkovArpa/hex-color-mixer/blob/master/LICENSE */
+/* Copyright (c) 2019 Andy, 2020 GirkovArpa
+ * https://github.com/GirkovArpa/hex-color-mixer/blob/master/LICENSE */
 
-const hex2dec = (hex) => {
-  return hex
+const hex2dec = (hex) =>
+  hex
     .replace("#", "")
     .match(/.{2}/g)
     .map((n) => parseInt(n, 16));
-};
 
 const rgb2hex = (r, g, b) => {
-  r = Math.round(r);
-  g = Math.round(g);
-  b = Math.round(b);
-  r = Math.min(r, 255);
-  g = Math.min(g, 255);
-  b = Math.min(b, 255);
-  return "#" + [r, g, b].map((c) => c.toString(16).padStart(2, "0")).join("");
+  let rL = Math.round(r);
+  let gL = Math.round(g);
+  let bL = Math.round(b);
+  rL = Math.min(r, 255);
+  gL = Math.min(g, 255);
+  bL = Math.min(b, 255);
+  return `#${[rL, gL, bL]
+    .map((c) => c.toString(16).padStart(2, "0"))
+    .join("")}`;
 };
 
 const rgb2cmyk = (r, g, b) => {
@@ -38,7 +40,7 @@ const cmyk2rgb = (c, m, y, k) => {
   return [r, g, b];
 };
 
-const mix_cmyks = (...cmyks) => {
+const mixCmyks = (...cmyks) => {
   const c =
     cmyks.map((cmyk) => cmyk[0]).reduce((a, b) => a + b, 0) / cmyks.length;
   const m =
@@ -47,17 +49,18 @@ const mix_cmyks = (...cmyks) => {
     cmyks.map((cmyk) => cmyk[2]).reduce((a, b) => a + b, 0) / cmyks.length;
   const k =
     cmyks.map((cmyk) => cmyk[3]).reduce((a, b) => a + b, 0) / cmyks.length;
+
   return [c, m, y, k];
 };
 
-const mix_hexes = (...hexes) => {
+const mixHexes = (...hexes) => {
   const rgbs = hexes.map((hex) => hex2dec(hex));
   const cmyks = rgbs.map((rgb) => rgb2cmyk(...rgb));
-  const mixture_cmyk = mix_cmyks(...cmyks);
-  const mixture_rgb = cmyk2rgb(...mixture_cmyk);
-  const mixture_hex = rgb2hex(...mixture_rgb);
-  
-  return mixture_hex;
+  const mixtureCmyk = mixCmyks(...cmyks);
+  const mixtureRgb = cmyk2rgb(...mixtureCmyk);
+  const mixtureHex = rgb2hex(...mixtureRgb);
+
+  return mixtureHex;
 };
 
-module.exports = mix_hexes;
+module.exports = mixHexes;
