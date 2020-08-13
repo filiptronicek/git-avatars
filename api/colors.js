@@ -1,12 +1,11 @@
 /* Copyright (c) 2019 Andy, 2020 GirkovArpa
  * https://github.com/GirkovArpa/hex-color-mixer/blob/master/LICENSE */
 
-const hex2dec = (hex) => {
-  return hex
+const hex2dec = (hex) =>
+  hex
     .replace("#", "")
     .match(/.{2}/g)
     .map((n) => parseInt(n, 16));
-};
 
 const rgb2hex = (r, g, b) => {
   let rL = Math.round(r);
